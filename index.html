@@ -9,43 +9,111 @@
     html {
       scroll-behavior: smooth;
     }
+
+    .initial {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%);
+      transition: transform 0.8s ease, top 0.8s ease;
+      z-index: 50;
+    }
+
+    .to-top {
+      top: 0;
+      transform: translateY(0);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 1058px) {
+      #nav-menu {
+        height: auto !important;
+      }
+    }
+
+    .radial-mask {
+      -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
+      mask-image: radial-gradient(circle at center, black 15%, transparent 90%);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+    }
   </style>
 </head>
-<body class="bg-gray-500 font-sans text-white">
+<body class="bg-gray-800 font-sans text-white">
 
   <!-- NAV INICIAL CENTRADO -->
-  <div id="nav-container" class="absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out z-50">
+  <div id="nav-container" class="initial flex items-center justify-center bg-gray-800 z-50">
     <div id="navbar" class="border-2 rounded-2xl border-red-400 m-6 shadow-xl shadow-red-300 w-3/4 bg-gray-800">
-      <nav class="flex justify-between p-5 items-center">
+      <nav class="flex justify-between p-5 items-center relative">
         <img src="img/logo.png" alt="Logo" class="w-16 h-16">
-        <ul class="flex gap-10 text-white">
-          <li><a href="#inicio" class="nav-link hover:underline">INICIO</a></li>
-          <li><a href="#portafolio" class="nav-link hover:underline">PORTAFOLIO</a></li>
-          <li><a href="#acerca" class="nav-link hover:underline">ACERCA DE</a></li>
-          <li><a href="#blog" class="nav-link hover:underline">BLOG</a></li>
+        
+        <button id="menu-toggle" class="md:hidden text-white focus:outline-none z-50">
+          <svg id="hamburger-icon" class="w-8 h-8 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        
+        <ul id="nav-menu"
+          class="hidden md:flex md:gap-10 flex-col md:flex-row absolute md:static top-0 left-0 w-full h-screen md:h-auto bg-gray-800 justify-center items-center text-xl transition-all duration-700 ease-in-out z-40 flex-wrap rounded-2xl">
+          <li><a href="#inicio" class="nav-link hover:underline block w-full text-center py-4">INICIO</a></li>
+          <li><a href="#sobremi" class="nav-link hover:underline block w-full text-center py-4">SOBRE MI</a></li>
+          <li><a href="#proyectos" class="nav-link hover:underline block w-full text-center py-4">PROYECTOS</a></li>
+          <li><a href="#experiencia" class="nav-link hover:underline block w-full text-center py-4">EXPERIENCIA</a></li>
+          <li><a href="#blog" class="nav-link hover:underline block w-full text-center py-4">BLOG</a></li>
+          <li><a href="#contacto" class="nav-link hover:underline block w-full text-center py-4">CONTACTO</a></li>
+        
         </ul>
       </nav>
+      </div>
+      </div>
     </div>
   </div>
-
   <!-- SECCIONES -->
-  <section id="inicio" class="min-h-screen px-10 py-20 bg-gray-700 opacity-0 transition-opacity duration-1000">
-    <h2 class="text-4xl mb-4">Inicio</h2>
-    <p>Contenido de la sección INICIO.</p>
+  <section id="inicio" class="m-60 border-2 rounded-2xl border-red-400 shadow-xl  shadow-red-300 min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000 h-10">
+    <div>
+      <div>
+        <img class="radial-mask w-64 h-64 object-cover rounded-full" src="img/personal.jpg" alt="">
+      </div>
+    </div>
   </section>
 
-  <section id="portafolio" class="min-h-screen px-10 py-20 bg-gray-600 opacity-0 transition-opacity duration-1000">
-    <h2 class="text-4xl mb-4">Portafolio</h2>
+  <section id="sobremi" class="min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
+    <h2 class="text-4xl mb-4">SOBRE MI</h2>
     <p>Contenido de la sección PORTAFOLIO.</p>
   </section>
 
-  <section id="acerca" class="min-h-screen px-10 py-20 bg-gray-500 opacity-0 transition-opacity duration-1000">
-    <h2 class="text-4xl mb-4">Acerca de</h2>
+  <section id="proyectos" class="min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
+    <h2 class="text-4xl mb-4">PROYECTOS</h2>
     <p>Contenido de la sección ACERCA DE.</p>
   </section>
 
-  <section id="blog" class="min-h-screen px-10 py-20 bg-gray-400 opacity-0 transition-opacity duration-1000">
-    <h2 class="text-4xl mb-4">Blog</h2>
+  <section id="experiencia" class="min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
+    <h2 class="text-4xl mb-4">EXPERIENCIA</h2>
+    <p>Contenido de la sección BLOG.</p>
+  </section>
+
+  <section id="blog" class="min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
+    <h2 class="text-4xl mb-4">BLOG</h2>
+    <p>Contenido de la sección BLOG.</p>
+  </section>
+
+  <section id="contacto" class="min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
+    <h2 class="text-4xl mb-4">CONTACTO</h2>
     <p>Contenido de la sección BLOG.</p>
   </section>
 
@@ -54,36 +122,47 @@
     const navContainer = document.getElementById('nav-container');
     const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
     let moved = false;
+
+    // Mostrar/ocultar menú en móvil
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
 
     links.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-
         const targetId = link.getAttribute('href').substring(1);
         const target = document.getElementById(targetId);
 
+        // Movimiento del navbar hacia arriba
         if (!moved) {
           moved = true;
+          navContainer.classList.add('to-top');
 
-          // Transición suave al top
-          navContainer.classList.remove('items-center', 'h-screen');
-          navContainer.classList.add('items-start', 'h-auto', 'sticky', 'top-0', 'z-50', 'bg-gray-800');
-
-          // Aplicamos transform para animar
-          navContainer.style.transform = 'translateY(-500px)';
           setTimeout(() => {
-            navContainer.style.transition = 'transform 0.7s ease';
-            navContainer.style.transform = 'translateY(0)';
-          }, 10);
+            navContainer.classList.remove('initial', 'to-top');
+            navContainer.classList.add('sticky', 'top-0');
+          }, 800);
         }
 
-        // Scroll a la sección con animación
-        target.scrollIntoView({ behavior: 'smooth' });
+        // Ocultar menú hamburguesa (solo en móvil)
+        if (window.innerWidth < 1058) {
+          navMenu.classList.add('hidden');
+        }
 
-        // Mostrar sección seleccionada
-        sections.forEach(sec => sec.classList.remove('opacity-100'));
-        target.classList.add('opacity-100');
+        // Mostrar sección con animación suave
+        sections.forEach(sec => {
+          sec.classList.remove('opacity-100', 'visible');
+          sec.classList.add('fade-in');
+        });
+
+        target.classList.add('opacity-100', 'visible');
+
+        // Scroll suave a la sección
+        target.scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
