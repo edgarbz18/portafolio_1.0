@@ -1,1 +1,17 @@
 @config "tailwind.config.js";
+
+.initial {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  transition: transform 0.8s ease, top 0.8s ease;
+  z-index: 50;
+  opacity: 1; /* Asegúrate de que el menú sea visible inicialmente */
+}
+
+.to-top {
+  top: 0;
+  transform: translateY(0);
+}

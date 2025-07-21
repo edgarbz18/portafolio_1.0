@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NavBar con Animación</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
   <style>
     html {
       scroll-behavior: smooth;
@@ -84,35 +85,43 @@
     </div>
   </div>
   <!-- SECCIONES -->
-  <section id="inicio" class="m-60 border-2 rounded-2xl border-red-400 shadow-xl  shadow-red-300 min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000 h-10">
+  <section id="inicio" class="flex justify-center items-center mx-6 md:mx-12 lg:mx-48 border-2 rounded-2xl border-red-400 shadow-xl shadow-red-300 min-h-screen p-10 bg-gray-800 fade-in transition-opacity duration-1000 h-10">
+
     <div>
-      <div>
-        <img class="radial-mask w-64 h-64 object-cover rounded-full" src="img/personal.jpg" alt="">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+
+        <img class="radial-mask object-cover rounded-full" src="img/personal.jpg" alt="" height="300px" width="300px">
+
+        <div class="text-center md:text-left">
+          <p class="text-xl font-bold">EDGAR BAÑUELOS ZAMORA</p>
+          <p class="text-lg">ADMINISTRADOR DE TI Y DESARROLLADOR</P>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section id="sobremi" class="min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
+  <section id="sobremi" class=" px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
     <h2 class="text-4xl mb-4">SOBRE MI</h2>
     <p>Contenido de la sección PORTAFOLIO.</p>
   </section>
 
-  <section id="proyectos" class="min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
+  <section id="proyectos" class=" px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
     <h2 class="text-4xl mb-4">PROYECTOS</h2>
     <p>Contenido de la sección ACERCA DE.</p>
   </section>
 
-  <section id="experiencia" class="min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
+  <section id="experiencia" class=" px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
     <h2 class="text-4xl mb-4">EXPERIENCIA</h2>
     <p>Contenido de la sección BLOG.</p>
   </section>
 
-  <section id="blog" class="min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
+  <section id="blog" class=" px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
     <h2 class="text-4xl mb-4">BLOG</h2>
     <p>Contenido de la sección BLOG.</p>
   </section>
 
-  <section id="contacto" class="min-h-screen px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
+  <section id="contacto" class=" px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
     <h2 class="text-4xl mb-4">CONTACTO</h2>
     <p>Contenido de la sección BLOG.</p>
   </section>
@@ -124,45 +133,63 @@
     const sections = document.querySelectorAll('section');
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
+
+    // Elementos internos de la sección de inicio
+    const imagenInicio = document.getElementById('imagen-inicio');
+    const textoNombre = document.getElementById('texto-nombre');
+    const textoRol = document.getElementById('texto-rol');
+
     let moved = false;
 
-    // Mostrar/ocultar menú en móvil
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('hidden');
-    });
+    // --- Función para animar los elementos DENTRO de la sección INICIO ---
+    function animateInternalInicio() {
+      imagenInicio.classList.remove('opacity-0', 'translate-x-[-50px]');
+      textoNombre.classList.remove('opacity-0', 'translate-x-[50px]');
+      textoRol.classList.remove('opacity-0', 'translate-x-[70px]');
+    }
 
+    // EL BLOQUE 'DOMContentLoaded' FUE ELIMINADO DE AQUÍ.
+    // AHORA NO PASARÁ NADA HASTA QUE EL USUARIO HAGA CLIC.
+
+    // --- Lógica para los clics en el menú ---
     links.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
         const target = document.getElementById(targetId);
 
-        // Movimiento del navbar hacia arriba
+        // Mover la barra de navegación (solo la primera vez)
         if (!moved) {
           moved = true;
           navContainer.classList.add('to-top');
-
           setTimeout(() => {
             navContainer.classList.remove('initial', 'to-top');
             navContainer.classList.add('sticky', 'top-0');
+            const navHeight = navContainer.offsetHeight;
+            document.documentElement.style.scrollPaddingTop = `${navHeight}px`;
           }, 800);
         }
 
-        // Ocultar menú hamburguesa (solo en móvil)
+        // Ocultar todas las secciones quitando la clase 'visible'
+        sections.forEach(sec => {
+          sec.classList.remove('visible');
+        });
+
+        // Mostrar la sección de destino añadiendo la clase 'visible'
+        target.classList.add('visible');
+
+        // Si el destino es 'inicio', ejecutar su animación interna
+        if (targetId === 'inicio') {
+          animateInternalInicio();
+        }
+
+        // Hacer scroll a la sección
+        target.scrollIntoView({ behavior: 'smooth' });
+
+        // Ocultar menú en móvil
         if (window.innerWidth < 1058) {
           navMenu.classList.add('hidden');
         }
-
-        // Mostrar sección con animación suave
-        sections.forEach(sec => {
-          sec.classList.remove('opacity-100', 'visible');
-          sec.classList.add('fade-in');
-        });
-
-        target.classList.add('opacity-100', 'visible');
-
-        // Scroll suave a la sección
-        target.scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
