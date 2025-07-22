@@ -1,198 +1,40 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NavBar con Animación</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DPORTAFOLIO</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .initial {
-      position: fixed;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      transform: translateY(-50%);
-      transition: transform 0.8s ease, top 0.8s ease;
-      z-index: 50;
-    }
-
-    .to-top {
-      top: 0;
-      transform: translateY(0);
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (min-width: 1058px) {
-      #nav-menu {
-        height: auto !important;
-      }
-    }
-
-    .radial-mask {
-      -webkit-mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
-      mask-image: radial-gradient(circle at center, black 15%, transparent 90%);
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-size: cover;
-      mask-size: cover;
-    }
-  </style>
 </head>
-<body class="bg-gray-800 font-sans text-white">
+<body>
+  <header>
 
-  <!-- NAV INICIAL CENTRADO -->
-  <div id="nav-container" class="initial flex items-center justify-center bg-gray-800 z-50">
-    <div id="navbar" class="border-2 rounded-2xl border-red-400 m-6 shadow-xl shadow-red-300 w-3/4 bg-gray-800">
-      <nav class="flex justify-between p-5 items-center relative">
-        <img src="img/logo.png" alt="Logo" class="w-16 h-16">
-        
-        <button id="menu-toggle" class="md:hidden text-white focus:outline-none z-50">
-          <svg id="hamburger-icon" class="w-8 h-8 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        
-        <ul id="nav-menu"
-          class="hidden md:flex md:gap-10 flex-col md:flex-row absolute md:static top-0 left-0 w-full h-screen md:h-auto bg-gray-800 justify-center items-center text-xl transition-all duration-700 ease-in-out z-40 flex-wrap rounded-2xl">
-          <li><a href="#inicio" class="nav-link hover:underline block w-full text-center py-4">INICIO</a></li>
-          <li><a href="#sobremi" class="nav-link hover:underline block w-full text-center py-4">SOBRE MI</a></li>
-          <li><a href="#proyectos" class="nav-link hover:underline block w-full text-center py-4">PROYECTOS</a></li>
-          <li><a href="#experiencia" class="nav-link hover:underline block w-full text-center py-4">EXPERIENCIA</a></li>
-          <li><a href="#blog" class="nav-link hover:underline block w-full text-center py-4">BLOG</a></li>
-          <li><a href="#contacto" class="nav-link hover:underline block w-full text-center py-4">CONTACTO</a></li>
-        
+    <div class="navegacion">
+      <nav>
+        <img src="img/logo.png" alt="" height="90px" width="90px">
+        <ul>
+          <li><a href="#inicio">INICIO</a></li>
+          <li><a href="#sobremi">SOBRE MI</a></li>
+          <li><a href="#proyectos">PROYECTOS</a></li>
+          <li><a href="#experiencia">EXPERIENCIA</a></li>
+          <li><a href="#blog">BLOG</a></li>
+          <li><a href="#contacto">CONTACTO</a></li>
         </ul>
       </nav>
-      </div>
-      </div>
     </div>
-  </div>
-  <!-- SECCIONES -->
-  <section id="inicio" class="flex justify-center items-center mx-6 md:mx-12 lg:mx-48 border-2 rounded-2xl border-red-400 shadow-xl shadow-red-300 min-h-screen p-10 bg-gray-800 fade-in transition-opacity duration-1000 h-10">
 
-    <div>
-      <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+  </header>
 
-        <img class="radial-mask object-cover rounded-full" src="img/personal.jpg" alt="" height="300px" width="300px">
+  <!-- contenido principal -->
+   <main>
 
-        <div class="text-center md:text-left">
-          <p class="text-xl font-bold">EDGAR BAÑUELOS ZAMORA</p>
-          <p class="text-lg">ADMINISTRADOR DE TI Y DESARROLLADOR</P>
-        </div>
-
+    <section id="inicio">
+      <div>
+        <img src="" alt="">
+        
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="sobremi" class=" px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
-    <h2 class="text-4xl mb-4">SOBRE MI</h2>
-    <p>Contenido de la sección PORTAFOLIO.</p>
-  </section>
-
-  <section id="proyectos" class=" px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
-    <h2 class="text-4xl mb-4">PROYECTOS</h2>
-    <p>Contenido de la sección ACERCA DE.</p>
-  </section>
-
-  <section id="experiencia" class=" px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
-    <h2 class="text-4xl mb-4">EXPERIENCIA</h2>
-    <p>Contenido de la sección BLOG.</p>
-  </section>
-
-  <section id="blog" class=" px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
-    <h2 class="text-4xl mb-4">BLOG</h2>
-    <p>Contenido de la sección BLOG.</p>
-  </section>
-
-  <section id="contacto" class=" px-10 py-20 bg-gray-800 opacity-0 transition-opacity duration-1000">
-    <h2 class="text-4xl mb-4">CONTACTO</h2>
-    <p>Contenido de la sección BLOG.</p>
-  </section>
-
-  <!-- SCRIPT -->
-  <script>
-    const navContainer = document.getElementById('nav-container');
-    const links = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    // Elementos internos de la sección de inicio
-    const imagenInicio = document.getElementById('imagen-inicio');
-    const textoNombre = document.getElementById('texto-nombre');
-    const textoRol = document.getElementById('texto-rol');
-
-    let moved = false;
-
-    // --- Función para animar los elementos DENTRO de la sección INICIO ---
-    function animateInternalInicio() {
-      imagenInicio.classList.remove('opacity-0', 'translate-x-[-50px]');
-      textoNombre.classList.remove('opacity-0', 'translate-x-[50px]');
-      textoRol.classList.remove('opacity-0', 'translate-x-[70px]');
-    }
-
-    // EL BLOQUE 'DOMContentLoaded' FUE ELIMINADO DE AQUÍ.
-    // AHORA NO PASARÁ NADA HASTA QUE EL USUARIO HAGA CLIC.
-
-    // --- Lógica para los clics en el menú ---
-    links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const target = document.getElementById(targetId);
-
-        // Mover la barra de navegación (solo la primera vez)
-        if (!moved) {
-          moved = true;
-          navContainer.classList.add('to-top');
-          setTimeout(() => {
-            navContainer.classList.remove('initial', 'to-top');
-            navContainer.classList.add('sticky', 'top-0');
-            const navHeight = navContainer.offsetHeight;
-            document.documentElement.style.scrollPaddingTop = `${navHeight}px`;
-          }, 800);
-        }
-
-        // Ocultar todas las secciones quitando la clase 'visible'
-        sections.forEach(sec => {
-          sec.classList.remove('visible');
-        });
-
-        // Mostrar la sección de destino añadiendo la clase 'visible'
-        target.classList.add('visible');
-
-        // Si el destino es 'inicio', ejecutar su animación interna
-        if (targetId === 'inicio') {
-          animateInternalInicio();
-        }
-
-        // Hacer scroll a la sección
-        target.scrollIntoView({ behavior: 'smooth' });
-
-        // Ocultar menú en móvil
-        if (window.innerWidth < 1058) {
-          navMenu.classList.add('hidden');
-        }
-      });
-    });
-  </script>
-
+   </main>
 </body>
 </html>
