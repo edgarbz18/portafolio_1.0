@@ -123,7 +123,7 @@ section.content-section {
   margin-bottom: 50px;
 }
 
-@media screen and (max-width: 430px) and (min-width: 428px) {
+@media (max-width: 711px ) {
   #inicio {
     padding: 10px;
 
