@@ -9,8 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #636364;
-  color: white;
+  background-color: white;
   font-family: Arial, sans-serif;
   padding: 140px 20px 20px; /* Espacio para el header y los lados */
 }
@@ -38,7 +37,8 @@ li {
 }
 
 a { 
-  color: white;
+  color: black;
+  text-shadow: 0px 0px 3px black;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -50,11 +50,11 @@ a.nav-link:hover {
 }
 
 .navegacion {
-  border: 1px solid rgb(255, 0, 0);
+  border: 1px solid black;
   border-radius: 20px;
   padding: 15px;
-  box-shadow: 0px 0px 25px rgb(38, 0, 255);
-  background: #636364; /* Fondo semitransparente para el menú */
+  box-shadow: 0px 0px 25px black;
+  background: none; /* Fondo semitransparente para el menú */
   backdrop-filter: blur(5px);
   -webkit-animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -67,6 +67,7 @@ main {
   width: 100%;
   max-width: 800px; /* Ancho máximo para el contenido */
   text-align: center;
+
 }
 
 /* 1. Ocultamos TODAS las secciones de contenido por defecto */
@@ -89,3 +90,66 @@ main {
 /* (Tu animación 'slide-in-bck-center' se mantiene igual) */
 @-webkit-keyframes slide-in-bck-center { /* ... */ }
 @keyframes slide-in-bck-center { /* ... */ }
+
+div.bienvenida{
+  text-align: end;
+  padding: 5px 20px;
+  margin-top: 40px;
+}
+
+.contenidoInicio {
+  text-align: start;
+  margin-left: 45px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.infoPersonal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+section.content-section {
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0px 0px 25px black;
+}
+
+.imgPersonal {
+  border-radius: 50%;
+  box-shadow: 0px 0px 60px black;
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 10) 10%, rgba(0, 0, 0, 0) 210%);
+  margin-bottom: 50px;
+}
+
+@media (max-width: 711px ) {
+  #inicio {
+    padding: 10px;
+
+  }
+  div.bienvenida{
+  text-align: center;
+  padding: 5px 20px;
+  margin-top: 40px;
+}
+
+  .contenidoInicio {
+    margin-left: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+  .imgPersonal {
+    height: 250px;
+    margin-bottom: 30px;
+  }
+
+  .infoPersonal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+}
