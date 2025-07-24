@@ -14,6 +14,9 @@ body {
   padding: 140px 20px 20px; /* Espacio para el header y los lados */
 }
 
+
+/* SECCION INICIO TAMAÑO ESCRITORIO */
+
 header {
   position: fixed; /* Fija el menú en la parte superior */
   top: 20px;
@@ -36,7 +39,7 @@ li {
   list-style-type: none;
 }
 
-a { 
+.nav-link { 
   color: black;
   text-shadow: 0px 0px 3px black;
   text-decoration: none;
@@ -95,13 +98,14 @@ div.bienvenida{
   text-align: end;
   padding: 5px 20px;
   margin-top: 40px;
+  font-weight: 700;
 }
 
 .contenidoInicio {
   text-align: start;
   margin-left: 45px;
   display: flex;
-  flex-wrap: wrap;
+
 }
 
 .infoPersonal{
@@ -110,6 +114,11 @@ div.bienvenida{
   justify-content: center;
   gap: 25px;
 }
+
+.infoPersonal .nombre {
+  font-weight: 700;
+}
+
 section.content-section {
   border: 1px solid black;
   border-radius: 20px;
@@ -121,7 +130,10 @@ section.content-section {
   box-shadow: 0px 0px 60px black;
   -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 10) 10%, rgba(0, 0, 0, 0) 210%);
   margin-bottom: 50px;
+  margin-top: 30px;
 }
+
+/*  SECCION INICIO TAMAÑO CELULAR */
 
 @media (max-width: 711px ) {
   #inicio {
@@ -139,6 +151,7 @@ section.content-section {
     text-align: center;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
   .imgPersonal {
@@ -189,4 +202,20 @@ section.content-section {
   .menu-toggle {
     display: block;
   }
+}
+
+
+/* SECCION SOBRE MI TAMAÑO ESCRITORIO */
+
+.tituloSobremi {
+  margin: 50px 50px 20px 50px;
+}
+
+section .sobremi {
+  padding: 25px 35px 5px 35px;
+  text-align: justify;
+}
+
+section .pieSobremi {
+  margin: 25px;
 }
