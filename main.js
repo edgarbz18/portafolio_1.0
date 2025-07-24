@@ -25,4 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById(targetId).classList.add('active');
     });
   });
+  const toggleButton = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('nav ul');
+
+  toggleButton.addEventListener('click', () => {
+    navList.classList.toggle('active');
+  });
 });

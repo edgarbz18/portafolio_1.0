@@ -153,3 +153,40 @@ section.content-section {
   gap: 5px;
 }
 }
+
+/* menu hamburguesa */
+
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
+
+@media (max-width: 711px) {
+
+  div.navegacion {
+    width: 300px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
