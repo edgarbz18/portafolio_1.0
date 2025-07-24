@@ -219,3 +219,16 @@ section .sobremi {
 section .pieSobremi {
   margin: 25px;
 }
+
+/* SECCION SOBRE MI TAMAÑO CELULAR */
+
+@media (max-width: 711px) {
+  section .sobremi {
+    width: auto;
+    height: 300px;
+    display: flex;
+    flex-wrap: auto;
+    overflow: auto;
+    overflow: scroll;
+  }
+}
