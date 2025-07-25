@@ -67,7 +67,7 @@ a.nav-link:hover {
 
 main {
   padding: 50px;
-  width: 350px;
+  width: 350%;
   max-width: 800px; /* Ancho máximo para el contenido */
   text-align: center;
 
@@ -225,6 +225,7 @@ section .pieSobremi {
 /* SECCION SOBRE MI TAMAÑO CELULAR */
 
 @media (max-width: 711px) {
+
   section .sobremi {
     width: auto;
     height: 300px;
@@ -237,6 +238,7 @@ section .pieSobremi {
 
 /* SECCION PROYECTOS TAMAÑO ESCRITORIO */
 .content-section {
+  width: 400%;
   padding: 2rem;
   background-color: #f9f9f9;
   text-align: center;
