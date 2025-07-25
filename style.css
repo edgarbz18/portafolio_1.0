@@ -140,7 +140,7 @@ section.content-section {
 @media (max-width: 711px ) {
   #inicio {
     padding: 10px;
-    width: 400px;
+    width: 350px;
   }
 
   div.bienvenida{
@@ -227,7 +227,7 @@ section .pieSobremi {
 
 @media (max-width: 711px) {
     #sobremi {
-    width: 400px;
+    width: 350px;
   }
 
   section .sobremi {
@@ -278,5 +278,5 @@ section .pieSobremi {
 /* SECCION PROYECTOS TAMAÑO CELULAR */
 
   #proyectos {
-    width: 400px;
+    width: 350px;
   }
