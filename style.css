@@ -232,3 +232,43 @@ section .pieSobremi {
     overflow: scroll;
   }
 }
+
+/* SECCION PROYECTOS TAMAÑO ESCRITORIO */
+.content-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0px 25px rgba(0, 0, 0, 0.63);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 180px;
+}
+
+/* SECCION PROYECTOS TAMAÑO CELULAR */
+
+.content-section {
+  overflow: auto;
+  width: auto;
+}
