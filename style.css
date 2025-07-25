@@ -227,6 +227,7 @@ section .pieSobremi {
 @media (max-width: 711px) {
 
   section .sobremi {
+    padding: 0px;
     width: auto;
     height: 300px;
     display: flex;
