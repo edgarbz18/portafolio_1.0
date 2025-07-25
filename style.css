@@ -140,9 +140,8 @@ section.content-section {
 @media (max-width: 711px ) {
   #inicio {
     padding: 10px;
-    width: 400px;
-  }
 
+  }
   div.bienvenida{
   text-align: center;
   padding: 5px 20px;
@@ -226,10 +225,6 @@ section .pieSobremi {
 /* SECCION SOBRE MI TAMAÑO CELULAR */
 
 @media (max-width: 711px) {
-
-    #sobremmi {
-    width: 400px;
-  }
 
   section .sobremi {
     padding: 0px;
