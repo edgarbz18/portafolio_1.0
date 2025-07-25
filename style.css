@@ -67,11 +67,13 @@ a.nav-link:hover {
 
 main {
   padding: 50px;
-  width: 350%;
+  width: 350pxS;
   max-width: 800px; /* Ancho máximo para el contenido */
   text-align: center;
 
 }
+
+
 
 /* 1. Ocultamos TODAS las secciones de contenido por defecto */
 .content-section {
