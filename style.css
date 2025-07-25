@@ -140,8 +140,9 @@ section.content-section {
 @media (max-width: 711px ) {
   #inicio {
     padding: 10px;
-
+    width: 400px;
   }
+
   div.bienvenida{
   text-align: center;
   padding: 5px 20px;
@@ -225,6 +226,9 @@ section .pieSobremi {
 /* SECCION SOBRE MI TAMAÑO CELULAR */
 
 @media (max-width: 711px) {
+    #sobremi {
+    width: 400px;
+  }
 
   section .sobremi {
     padding: 0px;
@@ -273,7 +277,6 @@ section .pieSobremi {
 
 /* SECCION PROYECTOS TAMAÑO CELULAR */
 
-.content-section {
-  overflow: auto;
-  width: auto;
-}
+  #proyectos {
+    width: 400px;
+  }
