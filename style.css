@@ -63,40 +63,6 @@ a.nav-link:hover {
   animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-/* --- La Lógica de Ocultar/Mostrar --- */
-
-main {
-  padding: 50px;
-  width: 350%;
-  max-width: 800px; /* Ancho máximo para el contenido */
-  text-align: center;
-
-}
-
-
-
-/* 1. Ocultamos TODAS las secciones de contenido por defecto */
-.content-section {
-  display: none; 
-  animation: fadeIn 0.9s; /* Añadimos una animación de entrada */
-}
-
-/* 2. Mostramos ÚNICAMENTE la sección que tenga la clase 'active' */
-.content-section.active {
-  display: block; /* 'block' hace que el elemento sea visible y ocupe su espacio */
-}
-
-/* Animación para que el contenido aparezca suavemente */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* (Tu animación 'slide-in-bck-center' se mantiene igual) */
-@-webkit-keyframes slide-in-bck-center { /* ... */ }
-@keyframes slide-in-bck-center { /* ... */ }
-
-
 
 /* SECCION INICIO TAMAÑO ESCRITORIO */
 
@@ -149,7 +115,6 @@ section.content-section {
 @media (max-width: 711px ) {
   #inicio {
     padding: 10px;
-    width: 350px;
   }
   div.bienvenida{
   text-align: center;
@@ -178,42 +143,6 @@ section.content-section {
 }
 }
 
-/* menu hamburguesa */
-
-.menu-toggle {
-  display: none;
-  font-size: 30px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: black;
-}
-
-@media (max-width: 711px) {
-
-  div.navegacion {
-    width: 300px;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px black;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
 
 
 /* SECCION SOBRE MI TAMAÑO ESCRITORIO */
@@ -290,14 +219,23 @@ section .pieSobremi {
 
 /* SECCION EXPERIENCIA TAMAÑO ESCRITORIO */
 
+.tecnologias-dev {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 10px;
+
+}
+
+
 /* SECCION EXPERIENCIA TAMAÑO CELULAR */
 
-
+/* 
 @media (max-width: 711px) {
   #experiencia {
     width: 350px;
   }
-}
+} */
 
 
 
@@ -305,12 +243,12 @@ section .pieSobremi {
 
 /* SECCION BLOG TAMAÑO CELULAR */
 
-
+/* 
 @media (max-width: 711px) {
   #blog {
     width: 350px;
   }
-}
+} */
 
 
 
@@ -318,9 +256,80 @@ section .pieSobremi {
 
 /* SECCION CONTACTO TAMAÑO CELULAR */
 
-
+/* 
 @media (max-width: 711px) {
   #contacto {
     width: 350px;
+  }
+} */
+
+
+/* --- La Lógica de Ocultar/Mostrar --- */
+
+main {
+  padding: 50px;
+  width: 350%;
+  max-width: 800px; /* Ancho máximo para el contenido */
+  text-align: center;
+
+}
+
+
+
+/* 1. Ocultamos TODAS las secciones de contenido por defecto */
+.content-section {
+  display: none; 
+  animation: fadeIn 0.9s; /* Añadimos una animación de entrada */
+}
+
+/* 2. Mostramos ÚNICAMENTE la sección que tenga la clase 'active' */
+.content-section.active {
+  display: block; /* 'block' hace que el elemento sea visible y ocupe su espacio */
+}
+
+/* Animación para que el contenido aparezca suavemente */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* (Tu animación 'slide-in-bck-center' se mantiene igual) */
+@-webkit-keyframes slide-in-bck-center { /* ... */ }
+@keyframes slide-in-bck-center { /* ... */ }
+
+/* menu hamburguesa */
+
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
+
+@media (max-width: 711px) {
+
+  div.navegacion {
+    width: 300px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
