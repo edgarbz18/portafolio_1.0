@@ -114,6 +114,7 @@ section.content-section {
 
 @media (max-width: 711px ) {
   #inicio {
+    width: 350px;
     padding: 10px;
   }
   div.bienvenida{
