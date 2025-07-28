@@ -214,12 +214,25 @@ section .pieSobremi {
   border-radius: 8px;
   object-fit: cover;
   height: 180px;
+
 }
 
 
 /* SECCION EXPERIENCIA TAMAÑO ESCRITORIO */
 
-.tecnologias-dev {
+.desarrolloWEB, .adminTI {
+  padding-top: 15px;
+}
+
+.desarrolloWEB h3, .adminTI h3{
+  padding-top: 25px;
+}
+
+.desarrolloWEB p, .adminTI p {
+  padding-top: 25px;
+}
+
+.tecnologias-dev, .tecnologias-adminTI {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
@@ -228,14 +241,47 @@ section .pieSobremi {
 }
 
 
+
+
 /* SECCION EXPERIENCIA TAMAÑO CELULAR */
 
-/* 
+
 @media (max-width: 711px) {
-  #experiencia {
-    width: 350px;
-  }
-} */
+.desarrolloWEB {
+  padding-top: 15px;
+}
+
+.tecnologias-dev {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.desarrolloWEB h3 {
+  padding-top: 25px;
+}
+
+.adminTI {
+  padding-top: 15px;
+}
+
+.tecnologias-adminTI {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.adminTI h3 {
+  padding-top: 25px;
+}
+
+} 
 
 
 
