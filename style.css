@@ -286,7 +286,7 @@ section .pieSobremi {
 
 
 
-               /* SECCION BLOG TAMAÑO ESCRITORIO */
+/* SECCION BLOG TAMAÑO ESCRITORIO */
 .blog .card .img-blog {
   width: 250px;
 }
@@ -330,6 +330,46 @@ section .pieSobremi {
   background-color: #c82333;
 }
 
+.blog .content-section .card {
+  width: 300px;
+}
+
+#card-blog {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.blog #card-blog .card h2 {
+  text-align: start;
+}
+
+.blog #card-blog .card blockquote {
+  text-align: start;
+}
+
+.blog #card-blog .card time {
+  display: block;
+  text-align: start;
+}
+
+.blog #card-blog .card p {
+  text-align: start;
+}
+
+/* SECCION BLOG TAMAÑO CELULAR */
+
+@media (max-width: 711px) {
+  #card-blog {
+    display: grid;
+    grid-template-columns: 1fr;
+
+  }
+
+  .blog .content-section .card {
+  width: auto;
+}
+}
 
 /* Modal - fondo oscuro */
 .modal {
@@ -437,6 +477,8 @@ main {
 .content-section.active {
   display: block; /* 'block' hace que el elemento sea visible y ocupe su espacio */
 }
+
+
 
 /* Animación para que el contenido aparezca suavemente */
 @keyframes fadeIn {
