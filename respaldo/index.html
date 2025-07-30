@@ -184,24 +184,24 @@
     <article class="blog">
           <section id="blog" class="content-section">
 
-            <div class="card">
-              <img src="img/tecno.jpg" alt="tecno" width="250px" class="img-blog">
-              <h2>Titulo</h2>
+              <img src="img/tecno.jpg" alt="tecno" width="250px">
               <blockquote>Citar a persona</blockquote><span><time datetime="fecha de publicacion">fecha</time></span>
-              <p class="resumen">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ipsam tenetur, fuga maxime quidem tempore eaque sed sit.
-              </p>
+              <a href=""><h2>Titulo</h2></a>
+              <details>
+                <summary>Ver más</summary>
+                <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae ipsam tenetur, 
+                fuga maxime quidem tempore eaque sed sit 
+                detnesciunt placeat omnis harum perferendis 
+                ipsa delectus natus, quae possimus dicta est.
+                </p>
+              </details>
 
-              <!-- Botón para ver más -->
-              <button class="open-news-btn">Ver más</button>
-              
-              <div class="full-news-text" style="display: none;">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam numquam saepe ducimus mollitia dolorum labore quod, deleniti minus, ad earum totam delectus consectetur, nesciunt dicta modi fugiat? Quae, praesentium error.
-              </div>
-            </div>
 
           </section>
     </article>
+
+    </section>
 
     <section id="contacto" class="content-section">
       <h1>Contacto</h1>
@@ -210,16 +210,5 @@
 
    </main>
    <script src="main.js"></script>
-
-   <div class="modal" id="newsModal">
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <img id="modalImage" src="" alt="Imagen noticia" width="250px">
-        <h2 id="modalTitle">Título</h2>
-        <p id="modalDate">Fecha</p>
-        <blockquote id="modalQuote"></blockquote>
-        <p id="modalText">Texto completo de la noticia...</p>
-      </div>
-    </div>
 </body>
 </html>

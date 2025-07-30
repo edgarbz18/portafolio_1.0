@@ -31,48 +31,4 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleButton.addEventListener('click', () => {
     navList.classList.toggle('active');
   });
-
-  // abrir y cerrar seccion de noticias al sesleccionar la deseada
-
-
-  const modal = document.getElementById('newsModal');
-  const modalImage = document.getElementById('modalImage');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDate = document.getElementById('modalDate');
-  const modalQuote = document.getElementById('modalQuote');
-  const modalText = document.getElementById('modalText');
-  const closeModalBtn = document.querySelector('.close-modal');
-
-  const openButtons = document.querySelectorAll('.open-news-btn');
-
-  openButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const card = button.closest('.card');
-      const imgSrc = card.querySelector('img').src;
-      const title = card.querySelector('h2').textContent;
-      const date = card.querySelector('time').textContent;
-      const quote = card.querySelector('blockquote')?.textContent || '';
-      const fullText = card.querySelector('.full-news-text')?.textContent || 'Contenido no disponible.';
-
-      modalImage.src = imgSrc;
-      modalTitle.textContent = title;
-      modalDate.textContent = date;
-      modalQuote.textContent = quote;
-      modalText.textContent = fullText;
-
-      modal.classList.add('show');
-    });
-  });
-
-  closeModalBtn.addEventListener('click', () => {
-    modal.classList.remove('show');
-  });
-
-  window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.classList.remove('show');
-    }
-  });
-
-
 });
