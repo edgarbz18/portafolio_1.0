@@ -398,6 +398,11 @@ section .pieSobremi {
   margin: 20px;
 }
 
+#areatext {
+  width: 300px;
+  height: 150px;
+}
+
 /* SECCION CONTACTO TAÑANO CELULAR */
 
 @media (max-width: 711px) {
@@ -414,7 +419,12 @@ section .pieSobremi {
   }
 
   .redessociales {
-    padding-left: 10px;}
+    padding-left: 0px;}
+
+  #areatext {
+  width: 200px;
+  height: 75px;
+}
 
 }
 
