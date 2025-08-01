@@ -235,6 +235,7 @@ section .pieSobremi {
 
 .desarrolloWEB p, .adminTI p {
   padding-top: 25px;
+  text-align: justify;
 }
 
 .tecnologias-dev, .tecnologias-adminTI {
