@@ -56,8 +56,8 @@ a.nav-link:hover {
   border: 1px solid black;
   border-radius: 20px;
   padding: 15px;
-  box-shadow: 0px 0px 25px black;
-  background: none; /* Fondo semitransparente para el menú */
+  box-shadow: 0px 0px 15px black;
+  background: 100%; /* Fondo semitransparente para el menú */
   backdrop-filter: blur(5px);
   -webkit-animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -106,15 +106,15 @@ section.content-section {
 }
 
 .content-section {
+  width: 400PX;
   overflow: auto;
-  width: auto;
 }
 
 /*  SECCION INICIO TAMAÑO CELULAR */
 
 @media (max-width: 711px ) {
   #inicio {
-    width: 350px;
+    width: 400px;
     padding: 10px;
   }
   div.bienvenida{
@@ -161,12 +161,17 @@ section .pieSobremi {
   margin: 25px;
 }
 
+.content-section {
+  width: 400PX;
+  overflow: auto;
+}
+
 /* SECCION SOBRE MI TAMAÑO CELULAR */
 
 @media (max-width: 711px) {
 
   #sobremi {
-    width: 350px;
+    width: 400px;
   }
 
 
@@ -183,7 +188,6 @@ section .pieSobremi {
 
 /* SECCION PROYECTOS TAMAÑO ESCRITORIO */
 .content-section {
-  width: 400%;
   padding: 2rem;
   background-color: #f9f9f9;
   text-align: center;
@@ -371,6 +375,49 @@ section .pieSobremi {
 }
 }
 
+/* SECCION CONTACTO TAÑANO ESCRITORIO */
+
+.contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contacto, h1 {
+  margin-bottom: 40px;
+}
+
+.redessociales {
+  padding-left: 50px;
+  text-align: start;
+}
+
+.facebook, .instagram, .github {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+/* SECCION CONTACTO TAÑANO CELULAR */
+
+@media (max-width: 711px) {
+  #contacto {
+    width: 400px;
+  }
+
+  .formulario {
+    display: grid;
+  }
+
+  .enviar {
+    margin-top: 10px;
+  }
+
+  .redessociales {
+    padding-left: 10px;}
+
+}
+
+
 /* Modal - fondo oscuro */
 .modal {
   display: none; 
@@ -394,7 +441,7 @@ section .pieSobremi {
   
 }
 
-/* Contenido del modal */
+/* SECCION MODAL TAMAÑO ESCRITORIO */
 .modal-content {
   background: #fff;
   margin: 5% auto;
@@ -408,6 +455,17 @@ section .pieSobremi {
 div .modal-content {
   text-align: center;
 
+}
+
+/* SECCION MODAL TAMAÑO CELULAR */
+@media (max-width: 711px) {
+  .modal-content {
+    width: 350px;
+  }
+
+  .modal-content img {
+    width: 330px;
+  }
 }
 
 /* Botón de cerrar */
